@@ -1,5 +1,47 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "src/components/solid/**/*"
+      ],
+      "compilerOptions": {
+        "jsx": "preserve",
+        "jsxImportSource": "solid-js"
+      }
+    },
+    {
+      "files": [
+        "src/components/react/**/*"
+      ],
+      "compilerOptions": {
+        "jsx": "react-jsx",
+        "jsxImportSource": "react"
+      }
+    },
+    {
+      "files": [
+        "src/components/vue/**/*"
+      ],
+      "compilerOptions": {
+        "jsx": "preserve"
+      }
+    },
+    {
+      "files": [
+        "src/components/preact/**/*"
+      ],
+      "compilerOptions": {
+        "jsx": "react-jsx",
+        "jsxImportSource": "preact"
+      }
+    },
+  ],
 }
